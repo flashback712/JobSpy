@@ -16,7 +16,7 @@ titles = get_title_list()
 # write jobs to mongo
 def write_jobs_to_mongo(job_list, mongo: MongoDBHelper):
     # print(job_list)
-    mongo.insert_all(job_list)
+    mongo.insert_all(data_list=job_list)
 
 
 for location in locations:

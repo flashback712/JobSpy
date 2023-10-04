@@ -19,7 +19,7 @@ class MongoDBHelper:
         result = collection.insert_one(data)
         return result.inserted_id
 
-    def insert_all(self, collection_name, data_list):
+    def insert_all(self, data_list, collection_name='job_detail'):
         collection = self.database[collection_name]
         result = collection.insert_many(data_list)
         print(f'{len(data_list)} rows inserted into [{collection}].')
