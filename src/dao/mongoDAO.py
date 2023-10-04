@@ -22,6 +22,7 @@ class MongoDBHelper:
     def insert_all(self, collection_name, data_list):
         collection = self.database[collection_name]
         result = collection.insert_many(data_list)
+        print(f'{len(data_list)} rows inserted into [{collection}].')
         return result.inserted_ids
 
     def find(self, collection_name, query):
