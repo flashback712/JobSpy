@@ -14,7 +14,7 @@ titles = get_title_list()
 
 
 # write jobs to mongo
-def write_jobs_to_mongo(job_list: [JobPost], mongo: MongoDBHelper):
+def write_jobs_to_mongo(job_list, mongo: MongoDBHelper):
     print(job_list)
     # mongo.insert_all(job_list)
 
@@ -33,7 +33,7 @@ for location in locations:
                 # proxy="http://crawler-gost-proxy.jobright-internal.com:8080"
             )
             jobs_list = jobs.to_dict(orient='records')
-            print(jobs_list)
+            write_jobs_to_mongo(jobs_list, mongo_helper)
         except Exception as e:
             print(f'Error when process: [{location}][{title}]')
             print(e)
