@@ -33,6 +33,9 @@ for location in locations:
                 # proxy="http://crawler-gost-proxy.jobright-internal.com:8080"
             )
             jobs_list = jobs.to_dict(orient='records')
+            for job in jobs_list:
+                if 'date_posted' in job:
+                    job['date_posted'] = job['date_posted'].strftime('%Y-%m-%d %H:%M:%S')
             write_jobs_to_mongo(jobs_list, mongo_helper)
         except Exception as e:
             print(f'Error when process: [{location}][{title}]')
