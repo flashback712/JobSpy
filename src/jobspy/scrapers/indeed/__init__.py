@@ -197,7 +197,7 @@ class IndeedScraper(Scraper):
         #: get first page to initialize session
         job_list, total_results = self.scrape_page(scraper_input, 0, session)
 
-        with ThreadPoolExecutor(max_workers=1) as executor:
+        with ThreadPoolExecutor(max_workers=10) as executor:
             futures: list[Future] = [
                 executor.submit(self.scrape_page, scraper_input, page, session)
                 for page in range(1, pages_to_process + 1)
