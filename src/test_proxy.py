@@ -6,9 +6,11 @@ proxies = {
 
 url = 'https://ipinfo.io/ip'
 
+session = requests.Session()
+
 for i in range(10):
     try:
-        response = requests.get(url, proxies=proxies)
+        response = session.get(url, proxies=proxies)
 
         ip = response.text.strip()
 
