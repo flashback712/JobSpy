@@ -29,8 +29,8 @@ for location in locations:
                 results_wanted=1000,
                 country_indeed='USA',
                 # offset=25  # start jobs from an offset (use if search failed and want to continue)
-                proxy="http://crawler-gost-proxy.jobright-internal.com:8083"  # gcp
-                # proxy="http://crawler-gost-proxy.jobright-internal.com:8080" # aws
+                proxy="http://crawler-gost-proxy.jobright-internal.com:8080"  # 180
+                # proxy="http://crawler-gost-proxy.jobright-internal.com:8083" # 30
             )
             jobs_list = jobs.to_dict(orient='records')
             for job in jobs_list:
