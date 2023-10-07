@@ -1,7 +1,7 @@
 import requests
 
 proxies = {
-    'https': f'http://34.120.172.140:8123'
+    'https': f'http://crawler-gost-proxy.jobright-internal.com:8083'
 }
 
 url = 'https://ipinfo.io/ip'
